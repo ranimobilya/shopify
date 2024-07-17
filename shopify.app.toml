@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "f4c1f5e9dbb1b12791bdc45ff1ad896b"
+name = "raniyazilim"
+handle = "raniyazilim"
+application_url = "https://champagne-reserves-edited-air.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "rani-test-yazilim.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://champagne-reserves-edited-air.trycloudflare.com/auth/callback",
+  "https://champagne-reserves-edited-air.trycloudflare.com/auth/shopify/callback",
+  "https://champagne-reserves-edited-air.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
